@@ -1,24 +1,19 @@
-// Jenkinsfile
 pipeline {
     agent any
-
     stages {
         stage('Clone Repository') {
             steps {
-                // Clone the GitHub repository
-                git branch: 'master', url: 'https://github.com/R45Hrishikesh/hello.git'
+                git 'https://github.com/R45Hrishikesh/hello.git'
             }
         }
         stage('Build') {
             steps {
-                // Build the project with Maven
-                sh 'mvn clean compile'
+                bat 'mvn clean package'
             }
         }
         stage('Run Application') {
             steps {
-                // Run the Java application
-                sh 'mvn exec:java -Dexec.mainClass="com.example.HelloWorld"'
+                bat 'java -jar target/hello-world-1.0-SNAPSHOT.jar'
             }
         }
     }
