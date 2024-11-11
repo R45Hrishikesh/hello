@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/R45Hrishikesh/hello.git', branch: 'master', credentialsId: '1d1742e0-33c6-403b-a976-5c78ef92f5d3'
+                git 'https://github.com/R45Hrishikesh/hello.git', branch: 'master', credentialsId: '9de5c4e1-2576-4bba-a173-ab8b10e7c26b'
             }
         }
         stage('Build') {
